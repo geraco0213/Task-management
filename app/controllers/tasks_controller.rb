@@ -3,6 +3,9 @@ class TasksController < ApplicationController
     @tasks=@user.tasks
   end
   
+  def show 
+  end
+  
   def new
     @task=Task.new
   end
