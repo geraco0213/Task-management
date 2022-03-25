@@ -13,9 +13,11 @@
         </tr>
       </thead>
       <tbody>
-        <tr></tr>
-        <tr></tr>
-        
+        <% @tasks.each do |task| %>
+         <tr>
+           <td><%=link_to task.name , user_task_path(@user,task) %></td>
+         </tr>
+        <% end %>
         
       </tbody>
     </table>

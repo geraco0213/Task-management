@@ -11,7 +11,7 @@ class TasksController < ApplicationController
   end
   
   def create
-    @task= @user.tasks.build(task_params)
+    @task=@user.tasks.build(task_params)
     if @task.save
       flash[:success]="タスクを新規作成しました"
       redirect_to user_tasks_url @user
