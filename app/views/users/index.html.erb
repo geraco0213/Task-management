@@ -1,0 +1,32 @@
+
+<h1>利用者一覧</h1>
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <table class="tabele-condensed table-hover" id="tabele-users">
+        <thead>
+          <tr>
+            <th>名前</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @users.each do |user| %>
+           <tr>
+            <td>
+             <% if current_user.admin? %>
+              <%=link_to user.name ,user %>
+             <% else %>
+              <%=user.name %>
+             <% end %>
+            </td>
+            <td>
+             
+               <%=link_to "削除" , user, method: :delete ,data:{confirm: "削除してもよろしいですか"} ,class:"btn btn-danger"%>
+              
+            </td>
+           </tr>
+          <% end %>
+        </tbody>
+      </table>
+      
+    </div>
+  </div>

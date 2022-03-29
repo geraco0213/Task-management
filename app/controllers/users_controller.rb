@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
-  before_action :set_user,only:[:show, :edit, :update]
+  before_action :set_user,only:[:show, :edit, :update,:destroy]
   
   def index
-    @user= User.all
+    @users= User.all
   end
   
   def show
@@ -27,9 +27,9 @@ class UsersController < ApplicationController
   end
   
   def update
-    if @user.update_atributes(user_params)
+    if @user.update_attributes(user_params)
       flash[:success]="ユーザー情報を編集しました。"
-      redirect_to user
+      redirect_to @user
     else
       render :edit
     end
@@ -38,7 +38,7 @@ class UsersController < ApplicationController
   def destroy
     @user.destroy
     flash[:success]="ユーザーを削除しました。"
-    redirect_to user
+    redirect_to users_url
   end
       
   
