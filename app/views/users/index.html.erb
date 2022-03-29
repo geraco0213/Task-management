@@ -2,6 +2,7 @@
 <h1>利用者一覧</h1>
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
+     <%=will_paginate%>
       <table class="tabele-condensed table-hover" id="tabele-users">
         <thead>
           <tr>
@@ -27,6 +28,7 @@
           <% end %>
         </tbody>
       </table>
+     <%=will_paginate %>
       
     </div>
   </div>
