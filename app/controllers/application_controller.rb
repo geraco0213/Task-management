@@ -34,13 +34,7 @@ class ApplicationController < ActionController::Base
   
   
   
-  def guest_user
-    current_user==User.find_by(email: 'test@example.com')
-  end 
   
-  def login_required
-    redirect_to login_url unless current_user
-  end
     
 end
 
