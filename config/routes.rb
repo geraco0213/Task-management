@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
   
   post   '/guest_login', to: 'guest_sessions#create'
+  post   '/admin_login', to: 'admin_sessions#create'
   
   resources :users do
     resources :tasks

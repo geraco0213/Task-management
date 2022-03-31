@@ -4,18 +4,18 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= form_with(model: @user,local: true) do |f| %>
-      <%= render 'shared/error_messages' %>
+      <%= render 'shared/error_users_messages' %>
       
-      <%= f.label :name, class: "label-update" %>
+      <%= f.label :名前, class: "label-update" %>
       <%= f.text_field :name, class: "form-control" %>
 
-      <%= f.label :email, class: "label-signup" %>
+      <%= f.label :メールアドレス, class: "label-signup" %>
       <%= f.email_field :email, class: "form-control" %>
 
-      <%= f.label :password, class: "label-update" %>
+      <%= f.label :パスワード, class: "label-update" %>
       <%= f.password_field :password, class: "form-control" %>
 
-      <%= f.label :password_confirmation, class: "label-update" %>
+      <%= f.label :パスワード再入力, class: "label-update" %>
       <%= f.password_field :password_confirmation, class: "form-control" %>
 
       <%= f.submit "更新", class: "btn btn-primary btn-block btn-update" %>

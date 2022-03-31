@@ -4,21 +4,20 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= form_with(model: @user, local: true) do |f| %>
-      <%= render 'shared/error_messages' %>
+      <%= render 'shared/error_users_messages' %>
       
-      <%= f.label :name, class: "label-signup" %>
+      <%= f.label :名前, class: "label-signup" %>
       <%= f.text_field :name, class: "form-control" %>
 
-      <%= f.label :email, class: "label-signup" %>
+      <%= f.label :メールアドレス, class: "label-signup" %>
       <%= f.email_field :email, class: "form-control" %>
 
-      <%= f.label :password, class: "label-signup" %>
+      <%= f.label :パスワード, class: "label-signup" %>
       <%= f.password_field :password, class: "form-control" %>
 
-      <%= f.label :password_confirmation, class: "label-signup" %>
+      <%= f.label :パスワード再入力, class: "label-signup" %>
       <%= f.password_field :password_confirmation, class: "form-control" %>
 
       <%= f.submit "Sign Up", class: "btn btn-primary btn-block btn-signup" %>
     <% end %>
-  </div>
 </div>
