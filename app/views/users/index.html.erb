@@ -2,35 +2,35 @@
 <h1>利用者一覧</h1>
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
-     <%=will_paginate%>
-      <table class="tabele-condensed table-hover" id="tabele-users">
+      <table class="table-condensed table-hover" id="table-user">
+      <%=will_paginate %>  
         <thead>
           <tr>
             <th>名前</th>
           </tr>
         </thead>
         <tbody>
-          <% @users.each do |user| %>
-           <tr>
+         <% @users.each do |user| %>
+          <tr>
             <td>
-              <%=link_to user.name ,user %>
+              <%=link_to user.name, user %>
                <% if current_user?(user) %>
-                <span class="label label-primary label-user-division">管理者</span>
-               <% end %>
+                <span class="label label-primary label-user-divison">管理者</span>
+               <% end%>
                <% if !current_user?(user) %>
-                <span class="label label-success label-user-division">一般</span>
+                <span class="label label-success label-user-divison">一般</span>
                <% end %>
             </td>
             <td>
-              <% if !current_user?(user) %>
-               <%=link_to "削除" , user, method: :delete ,data:{confirm: "削除してもよろしいですか"} ,class:"btn btn-danger"%>
-              <% end %>
+              <%=link_to "削除", user, method: :delete , data:{confirm:"#{user.name}を削除します。よろしいですか？"} ,class:"btn btn-sm btn-danger pull-right" %>
             </td>
-           </tr>
-          <% end %>
+          </tr>
+         <% end %> 
         </tbody>
-      </table>
+      </table>  
      <%=will_paginate %>
-      
     </div>
-  </div>
+  </div>  
+    
+    
+    
