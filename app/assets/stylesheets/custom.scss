@@ -15,11 +15,12 @@ textarea {
   resize: vertical;
 }
 
+
 .center {
-  text-align: center;
-  
- 
+   text-align: center;
 }
+ 
+
 
 .center h1 {
   margin-bottom: 10px;
@@ -51,6 +52,9 @@ p {
   font-size: 1.1em;
   line-height: 1.7em;
 }
+
+
+
 
 /* ヘッダー */
 #header{
@@ -99,49 +103,7 @@ p {
 }
 
 
-.container{
-  margin-left:67.5px;
-  margin-right:67.5px;
-}
 
-
-
-
-
-
-.btn-success{
-  border-bottom-left-radius:6px;
-  border-bottom-right-radius:6px;
-  border-top-left-radius:6px;
-  border-top-right-radius:6px;
-}
-
-.btn-danger{
-  border-bottom-left-radius:4px;
-  border-bottom-right-radius:4px;
-  border-top-left-radius:4px;
-  border-top-right-radius:4px;
-  font-size:14px;
-  line-height:20px;
-  padding-bottom:6px;
-  padding-left:12px;
-  padding-right:12px;
-  padding-top:6px;
-}
-
-
-.btn-warning{
-  border-bottom-left-radius:4px;
-  border-bottom-right-radius:4px;
-  border-top-left-radius:4px;
-  border-top-right-radius:4px;
-  font-size:14px;
-  line-height:20px;
-  padding-bottom:6px;
-  padding-left:12px;
-  padding-right:12px;
-  padding-top:6px;
-}
 
 /* デバッグウインドウ */
 

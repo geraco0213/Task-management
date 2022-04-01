@@ -7,7 +7,7 @@
       <tbody>
         <tr>
           <th class="active col-md-3">ID</th>
-          <td><%= @user.id %></td>
+          <td class="col-md-9"><%= @user.id %></td>
         </tr>
         <tr>
           <th class="active">名前</th>
@@ -19,7 +19,7 @@
         </tr>
         <tr>
           <th class="active">作成日</th>
-          <td><%= @user.created_at %></td>
+          <td><%= l(@user.created_at, format: :long) %></td>
         </tr>
       </tbody>
 
