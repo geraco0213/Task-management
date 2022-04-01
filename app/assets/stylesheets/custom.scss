@@ -15,9 +15,12 @@ textarea {
   resize: vertical;
 }
 
+
 .center {
-  text-align: center;
+   text-align: center;
 }
+ 
+
 
 .center h1 {
   margin-bottom: 10px;
@@ -50,26 +53,58 @@ p {
   line-height: 1.7em;
 }
 
+
+
+
 /* ヘッダー */
-.navbar{
-  background-color: #008080;
+
+#header{
+  background-color:teal;
+  border-top-color:transparent;
+  border-bottom-color:transparent;
+  border-left-color:transparent;
+  border-right-color:transparent;
 }
 
+
 #logo {
-  float: left;
-  margin-right: 10px;
+  font-style:italic;
+  float:left;
+  margin-right:10px;
   font-size: 1.7em;
   color: #fff;
-  text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
 }
 
 #logo:hover {
-  color: #fff;
+  color: #BBB;
   text-decoration: none;
 }
+
+.header-list{
+  color:#fff !important;
+  font-weight:bold;
+}
+
+.header-list:hover {
+  color:#BBB !important;
+}
+
+
+#dropdown-title{
+  background-color:teal;
+}
+
+
+.dropdown-header{
+  background-color:rgba(200,200,200,0.5);
+  font-weight:bold;
+}
+
+
+
 
 /* デバッグウインドウ */
 
@@ -99,3 +134,6 @@ p {
     color: $state-danger-text;
   }
 }
+
+
+
