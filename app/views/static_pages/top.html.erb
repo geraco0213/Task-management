@@ -14,7 +14,7 @@
           <%= link_to "アカウント作成", signup_path, class: "btn btn-lg btn-success" %>
          <% end %>
          
-         <% if !current_user.admin? %>    <%# 現在のユーザーは非管理者（一般ユーザーか、ゲストユーザー)ですか？%>
+         <% if ! current_user.admin?  %>    <%# 現在のユーザーは非管理者（一般ユーザーか、ゲストユーザー)ですか？%>
           <%= link_to "アカウント作成", '#',class: "btn btn-lg btn-success",disabled:true %>
          <% end %>
           
@@ -43,9 +43,9 @@
         <%= f.submit "ログイン状態です。", class: "btn btn-primary btn-block btn-login" ,disabled:true %>
        
        <% end %>
-      <% end %>
       
-      <% if !logged_in? %>  <%#ログアウトしていますか？（ログイン状態でない。） %>
+      
+      <% else %>  <%#ログアウトしていますか？（ログイン状態でない。） %>
        <h1>ログイン</h1>
        <%= form_with(scope: :session, url: login_path, local: true) do |f| %>
        
