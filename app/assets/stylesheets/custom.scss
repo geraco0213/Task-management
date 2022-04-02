@@ -5,6 +5,7 @@
 
 body {
   padding-top: 60px;
+  margin-left: -10px;
 }
 
 section {
@@ -71,6 +72,7 @@ p {
   font-style:italic;
   float:left;
   margin-right:10px;
+  margin-left:60px;
   font-size: 1.7em;
   color: #fff;
   letter-spacing: -1px;
@@ -81,6 +83,12 @@ p {
 #logo:hover {
   color: #BBB;
   text-decoration: none;
+}
+
+
+.navbar-nav{
+  margin-right:-120px;
+
 }
 
 .header-list{

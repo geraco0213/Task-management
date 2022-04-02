@@ -1,5 +1,5 @@
 <header class="navbar navbar-fixed-top navbar-inverse"  id="header">
-  <div class="container">
+  <div class="container" id="header-container">
     <%= link_to "Task App", root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
@@ -14,7 +14,7 @@
           <li><%= link_to "タスク作成", new_user_task_path(current_user),class:"header-list" %></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle header-list" data-toggle="dropdown" id="dropdown-title">
-          　　<%=current_user.name %><b class="caret"></b>
+          　<%=current_user.name %><b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
               <li class="dropdown-header">ユーザー</li>
