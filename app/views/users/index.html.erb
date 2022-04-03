@@ -15,7 +15,7 @@
           <tr>
             <td>
               <%=link_to user.name, user %>
-               <% if admin_user?(user) || admin_guest_user?(user) %>
+               <% if user.admin? %>
                 <span class="label label-primary label-user-divison">管理者</span>
                <% else %>
                 <span class="label label-success label-user-divison">一般</span>
@@ -23,7 +23,7 @@
                
             </td>
             <td>
-              <% if !current_user?(user)%>
+              <% if !user.admin? %>
                <%=link_to "削除", user, method: :delete , data:{confirm:"#{user.name}を削除します。よろしいですか？"} ,class:"btn btn-sm btn-danger pull-right" %>
               <% end %>
             </td>

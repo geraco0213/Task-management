@@ -23,12 +23,12 @@ class ApplicationController < ActionController::Base
   end
   
   
-  def adminright_user
+  def admin_user
     redirect_to root_url unless current_user.admin?
   end
   
   
-  def adminright_or_correct_user
+  def admin_or_correct_user
     @user=User.find(params[:id]) if @user.blank?
     unless current_user?(@user) || current_user.admin?
      flash[:danger]="見る権限がありません。"

@@ -23,15 +23,6 @@ module SessionsHelper
   end
   
   
-  #　admin_user（管理者）を定義　※ゲスト管理者と区別
-  def admin_user
-    user=User.find_by(email:'sample@email.com')
-  end
-  
-  def admin_user?(user)
-    user==admin_user
-  end
-  
   
   
   # current_userを定義
