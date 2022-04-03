@@ -16,7 +16,10 @@ class ApplicationController < ActionController::Base
   end
       
   def correct_user
-    redirect_to(root_url) unless current_user?(@user)
+    unless current_user?(@user)
+    flash[:danger]="権限がありません。"
+    redirect_to(root_url)
+    end
   end
   
   
@@ -30,6 +33,14 @@ class ApplicationController < ActionController::Base
     unless current_user?(@user) || current_user.admin?
      flash[:danger]="見る権限がありません。"
      redirect_to(root_url)
+    end
+  end
+  
+  
+  def limitation_login_user
+    if logged_in?
+    flash[:info]="すでにログインしています。"
+    redirect_to root_url
     end
   end
   

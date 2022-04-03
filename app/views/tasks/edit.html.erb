@@ -1,9 +1,9 @@
 <% provide(:title,"Edit task") %>
-<h1>タスク更新</h1>
+<h1>タスク編集</h1>
 <div class="row">
   <div class="col-md-8 col-md-offset-2">
     
-    <%= form_with(model:@task,url:user_task_path,mehod: :patch,local: true) do |f| %>
+    <%= form_with(model:@task,url:user_task_path,mehod: :patch ,local: true) do |f| %>
       <%= render 'shared/error_messages',object:f.object %>
     　
       <%= f.label :name, class: "label-form" %>
