@@ -22,6 +22,19 @@ module SessionsHelper
     @current_user = nil
   end
   
+  
+  #　admin_user（管理者）を定義　※ゲスト管理者と区別
+  def admin_user
+    user=User.find_by(email:'sample@email.com')
+  end
+  
+  def admin_user?(user)
+    user==admin_user
+  end
+  
+  
+  
+  # current_userを定義
   def current_user
     if (user_id = session[:user_id])
       @current_user ||= User.find_by(id: user_id)
@@ -38,6 +51,7 @@ module SessionsHelper
   def current_user?(user)
     user==current_user
   end
+  
   
   
   def logged_in?

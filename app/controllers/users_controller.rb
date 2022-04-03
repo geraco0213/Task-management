@@ -2,12 +2,13 @@ class UsersController < ApplicationController
   before_action :set_user ,only:[:show, :edit, :update,:destroy]
   before_action :logged_in_user ,only:[:index,:show,:edit,:update]
   before_action :correct_user ,only:[:edit,:update]
-  before_action :admin_user ,only: :index
-  before_action :limitation_login_user ,only: :new
- 
+  before_action :adminright_user ,only: :index
+  
+  before_action :limitation_not_admin_user, only: :new
+  
  
   def index
-    @users=User.paginate(page:params[:page],per_page:20)
+    @users=User.paginate(page:params[:page],per_page:20).order(created_at: :desc)
   end
   
   def show

@@ -23,12 +23,12 @@ class ApplicationController < ActionController::Base
   end
   
   
-  def admin_user
+  def adminright_user
     redirect_to root_url unless current_user.admin?
   end
   
   
-  def admin_or_correct_user
+  def adminright_or_correct_user
     @user=User.find(params[:id]) if @user.blank?
     unless current_user?(@user) || current_user.admin?
      flash[:danger]="見る権限がありません。"
@@ -44,6 +44,13 @@ class ApplicationController < ActionController::Base
     end
   end
   
+  
+  def limitation_not_admin_user
+    unless current_user.admin?
+    flash[:info]="すでにログインしています。"
+    redirect_to current_user
+    end
+  end
   
     
 end

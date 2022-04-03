@@ -15,11 +15,12 @@
           <tr>
             <td>
               <%=link_to user.name, user %>
-               <% if current_user?(user) %>
+               <% if admin_user?(user) || admin_guest_user?(user) %>
                 <span class="label label-primary label-user-divison">管理者</span>
                <% else %>
                 <span class="label label-success label-user-divison">一般</span>
                <% end %>
+               
             </td>
             <td>
               <% if !current_user?(user)%>
