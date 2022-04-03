@@ -1,6 +1,6 @@
 module AdminSessionsHelper
   
-  #ゲスト管理者を定義　※管理者と区別
+#一応、定義しておくが、多分使う場面ない
   def admin_guest_user
   　user=User.find_by(email:'admin-guest@email.com')
   end

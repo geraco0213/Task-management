@@ -37,6 +37,7 @@ class ApplicationController < ActionController::Base
   end
   
   
+  #ログインしているユーザーへの制限
   def limitation_login_user
     if logged_in?
     flash[:info]="すでにログインしています。"
@@ -45,13 +46,21 @@ class ApplicationController < ActionController::Base
   end
   
   
+  #一般ログインユーザーへの制限
   def limitation_not_admin_user
-    unless current_user.admin?
+    if logged_in? && !current_user.admin?
     flash[:info]="すでにログインしています。"
     redirect_to current_user
     end
   end
   
+  
+  #メッセージを表示しないために再定義
+  def correct_user_1
+    unless current_user?(@user)
+    redirect_to(root_url)
+    end
+  end
     
 end
 

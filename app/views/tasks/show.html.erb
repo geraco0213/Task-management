@@ -14,7 +14,9 @@
        </tr>
        <tr>
          <th class="active">詳細</th>
-         <td><%=@task.description %></td>
+         <td><%=safe_join(@task.description.split("\n"),tag(:br))%>
+             <%== simple_format(text_url_to_link(@task.description), {}, sanitize: false) %>
+         </td>
        </tr> 
        <tr>
          <th class="active">作成日</th>

@@ -1,8 +1,11 @@
 class TasksController < ApplicationController
   before_action :set_user
   before_action :set_task,only:[:show,:edit,:update,:destroy]
-  before_action :logged_in_user,only:[:index,:show,:create,:edit,:update,:destroy]
-  before_action :correct_user,only:[:index,:show,:new,:create,:edit,:update,:destroy]
+  before_action :logged_in_user,only:[:index,:show,:new,:create,:edit,:update,:destroy]
+  before_action :correct_user,only:[:index,:show,:edit,:update,:destroy]
+  
+  before_action :correct_user_1, only: [:new,:create]
+  
   
   def index
     @tasks=@user.tasks.order(created_at: :desc)
@@ -53,11 +56,11 @@ class TasksController < ApplicationController
     end
     
     def set_user
-      @user=User.find(params[:user_id])
+      @user=User.find_by(id:params[:user_id])
     end
     
     def set_task
-      @task=Task.find(params[:id])
+      @task=Task.find_by(id:params[:id])
     end
 
 

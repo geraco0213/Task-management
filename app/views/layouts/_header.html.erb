@@ -7,7 +7,7 @@
         
         <% if logged_in? %>  <%#ログインしていますか？%>
         
-         <% if current_user.admin? %>   <%#現在のユーザーは管理者ですか？ （管理者の場合のみ以下を表示）%>
+         <% if current_user.admin? %>   <%#現在のユーザーは管理権限保持者ですか？ （その場合は利用者一覧を表示）%>
           <li><%= link_to "利用者一覧", users_path,class:"header-list" %></li>
          <% end %>
          
