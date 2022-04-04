@@ -1,17 +1,3 @@
-#task-name{
-  font-size:18px;
-  margin-right:40px;
-}
-
-
-#btn-make-task{
-  margin-right:-150px;
-}
-
-#table-tasks{
-  margin-left:200px;
-}
-
 .label-form{
   margin-top:5px;
 }
@@ -19,9 +5,6 @@
 .btn-form{
   margin-top:10px;
 }
-
-
-
 
 #btn-destroy{
   font-size:18px;
@@ -35,4 +18,35 @@
   padding-bottom:10px;
   padding-left:16px;
   padding-right:16px;
+}
+
+#task-name{
+  font-size:18px;
+}
+
+
+/*エラードリルで答え合わせ、table-tasksのmarginによる移動を破棄→左寄りになっている*/
+/* indexページ*/
+#table-tasks{
+  th{
+    vertical-align:middle;
+  }
+  td{
+    vertical-align:middle;
+  }
+}
+
+
+/* showページ*/
+#table-task{
+  table-layout: fixed; width:100%;
+  th{
+    vertical-align:middle;
+    text-align:center;
+    white-space:nowrap;
+  }
+  
+  td{
+    word-wrap:break-word;
+  }
 }
