@@ -1,11 +1,10 @@
-.label-form{
-  margin-top:5px;
+#task-name{
+  font-size:18px;
 }
 
-.btn-form{
-  margin-top:10px;
-}
 
+
+/* 削除ボタンのサイズがおかしいので、調整したが、エラードリルの答えではこんなことしていない*/
 #btn-destroy{
   font-size:18px;
   border-bottom-left-radius:6px;
@@ -20,12 +19,9 @@
   padding-right:16px;
 }
 
-#task-name{
-  font-size:18px;
-}
 
 
-/*エラードリルで答え合わせ、table-tasksのmarginによる移動を破棄→左寄りになっている*/
+/*エラードリルで答え合わせ→table-tasksのmarginによる移動を破棄→その結果、左寄りになっているが大丈夫？*/
 /* indexページ*/
 #table-tasks{
   th{
