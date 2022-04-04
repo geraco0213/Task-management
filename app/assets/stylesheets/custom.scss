@@ -60,10 +60,6 @@ p {
 
 #header{
   background-color:teal;
-  border-top-color:transparent;
-  border-bottom-color:transparent;
-  border-left-color:transparent;
-  border-right-color:transparent;
 }
 
 
@@ -71,7 +67,7 @@ p {
   font-style:italic;
   float:left;
   margin-right:10px;
-  margin-left:60px;
+  /*margin-left:60px;  */
   font-size: 1.7em;
   color: #fff;
   letter-spacing: -1px;
@@ -85,10 +81,10 @@ p {
 }
 
 
-.navbar-nav{
+/*.navbar-nav{
   margin-right:-120px;
 
-}
+} */
 
 .header-list{
   color:#fff !important;
