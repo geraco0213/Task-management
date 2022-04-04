@@ -10,11 +10,11 @@
 
         <% if logged_in? %>   　<%# ログインしていますか？%>
         
-         <% if current_user.admin? %>   <%# 現在のユーザーは管理者ですか%>
+         <% if current_user.admin? %>   <%# 現在のユーザーは管理権限保持者ですか%>
           <%= link_to "アカウント作成", signup_path, class: "btn btn-lg btn-success" %>
          <% end %>
          
-         <% if ! current_user.admin?  %>    <%# 現在のユーザーは非管理者（一般ユーザーか、ゲストユーザー)ですか？%>
+         <% if ! current_user.admin?  %>    <%# 現在のユーザーは非管理権限保持者（一般ユーザーか、ゲストユーザー)ですか？%>
           <%= link_to "アカウント作成", '#',class: "btn btn-lg btn-success",disabled:true %>
          <% end %>
           

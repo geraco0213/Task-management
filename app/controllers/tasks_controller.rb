@@ -1,10 +1,8 @@
 class TasksController < ApplicationController
   before_action :set_user
   before_action :set_task,only:[:show,:edit,:update,:destroy]
-  before_action :logged_in_user,only:[:index,:show,:new,:create,:edit,:update,:destroy]
-  before_action :correct_user,only:[:index,:show,:edit,:update,:destroy]
-  
-  before_action :correct_user_1, only: [:new,:create]
+  before_action :logged_in_user
+  before_action :correct_user
   
   
   def index
@@ -15,10 +13,14 @@ class TasksController < ApplicationController
   end
   
   def new
-    @task=Task.new
-    
+    if current_user?(@user)
+      @task=Task.new
+    else
+      redirect_to(root_url)
+    end
   end
-  
+    
+    
   def create
     @task= @user.tasks.build(task_params)
     if @task.save
@@ -52,7 +54,7 @@ class TasksController < ApplicationController
   private
   
     def task_params
-      params.require(:task).permit(:name, :description, :user_id)
+      params.require(:task).permit(:name, :description,:user_id)
     end
     
     def set_user

@@ -14,8 +14,8 @@
        </tr>
        <tr>
          <th class="active">詳細</th>
-         <td><%=safe_join(@task.description.split("\n"),tag(:br))%>
-             <%== simple_format(text_url_to_link(@task.description), {}, sanitize: false) %>
+         <td>
+           <%= auto_link(safe_join(@task.description.split("\n"),tag(:br))) %>
          </td>
        </tr> 
        <tr>
