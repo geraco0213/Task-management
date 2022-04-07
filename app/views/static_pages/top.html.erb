@@ -1,23 +1,22 @@
 <% provide(:title, "Top") %>
 
 <div class="row">
+  
   <div class="col-md-7">
     <div class="center jumbotron" id="top-main">
       <h1 id="top-main-title">TaskApp</h1>
       <p>TaskAppは簡易ToDo管理ツールです。</p>
       <p>↓↓初めてのご利用↓↓</p>
-
-      <% if logged_in? %>   　<%# ログインしていますか？%>
-        
-       <% if current_user.admin? %>   <%# 現在のユーザーは管理権限保持者ですか%>
-        <%= link_to "アカウント作成", signup_path, class: "btn btn-lg btn-success" %>
-       <% end %>
-         
-       <% if ! current_user.admin?  %>    <%# 現在のユーザーは非管理権限保持者（一般ユーザーか、ゲストユーザー)ですか？%>
-        <%= link_to "アカウント作成", '#',class: "btn btn-lg btn-success",disabled:true %>
-       <% end %>
-          
-      <% else %>    <%# ログアウトしていますか？（ログインしていません。）%>
+      
+      <% if logged_in? %>
+        <% if current_user.admin? %>
+          <%= link_to "アカウント作成", signup_path, class: "btn btn-lg btn-success" %>
+        <% end %>
+        <% unless current_user.admin? %>
+          <%= link_to "アカウント作成", signup_path, class: "btn btn-lg btn-success" , disabled:true %>
+        <% end %>
+      
+      <% else %>
         <%= link_to "アカウント作成", signup_path, class: "btn btn-lg btn-success" %>
         <div style="margin-top:10px">
           <%= link_to "ゲストログイン（管理権限）", admin_login_path,method: :post,class: "btn btn-lg btn-danger" %>
@@ -39,7 +38,7 @@
       <%= f.label :パスワード, class: "label-login" %>
       <%= f.password_field :password, class: 'form-control' ,readonly:true %>
         
-      <%= f.submit "ログイン状態です。", class: "btn btn-primary btn-block btn-login" ,disabled:true %>
+      <%= f.submit "ログイン状態です", class: "btn btn-primary btn-block btn-login", disabled:true %>
        
      <% end %>
       
