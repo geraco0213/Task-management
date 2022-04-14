@@ -10,6 +10,7 @@ class TasksController < ApplicationController
   end
   
   def show 
+    
   end
   
   def new
@@ -22,7 +23,7 @@ class TasksController < ApplicationController
     
     
   def create
-    @task= @user.tasks.build(task_params)
+    @task= Task.new(task_params)
     if @task.save
       flash[:success] = "タスクを新規作成しました。"
       redirect_to user_tasks_url @user
@@ -62,9 +63,10 @@ class TasksController < ApplicationController
     end
     
     def set_task
-      @task=Task.find_by(id:params[:id])
+      @task=@user.tasks.find_by(id:params[:id])
     end
-
+    
+    
 
 end
 
